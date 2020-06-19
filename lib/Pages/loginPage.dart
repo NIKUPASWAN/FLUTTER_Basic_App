@@ -1,6 +1,7 @@
 
 //import 'package:APK/Pages/homePages.dart';
 import 'package:APK/bgImage.dart';
+import 'package:APK/utlis/constant.dart';
 import 'package:flutter/material.dart';
 class LoginPage extends StatefulWidget {
   @override
@@ -58,7 +59,8 @@ Padding(
  ),
  SizedBox(height: 16,),
  RaisedButton(onPressed: () {
-   Navigator.pushNamed(context, "/home");
+   Constants.pref.setBool("LoggedIn", true);
+   Navigator.pushReplacementNamed(context, "/home");
  },
  child: Text('sign In'),
  color: Colors.orange,

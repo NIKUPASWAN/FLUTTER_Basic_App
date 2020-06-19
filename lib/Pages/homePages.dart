@@ -1,5 +1,6 @@
 //import 'package:APK/Changewidgers.dart';
 import 'package:APK/drawer.dart';
+import 'package:APK/utlis/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -38,6 +39,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Auwesome App'),
+        actions: <Widget>[
+         IconButton(icon:Icon (Icons.exit_to_app),onPressed: () {
+           Constants.pref.setBool("LoggedIn", false);
+           Navigator.pushNamed(context, "/Login");
+           
+         },)
+        ],
       ),
       body: Padding(padding: const EdgeInsets.all(10),
       child: data!=null?
